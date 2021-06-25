@@ -19,6 +19,7 @@ pipeline {
     stage("Test") {
       steps{
         echo 'Testing process...Test2'
+        echo env.BRANCH_NAME
       }
     }
     
