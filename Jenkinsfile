@@ -7,7 +7,7 @@ pipeline {
     stage("Build") {
       when {
         expression{
-          BRANCH_NAME =='dev'
+          env.BRANCH_NAME =='dev'
         }
       }
           
