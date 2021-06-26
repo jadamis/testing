@@ -4,6 +4,7 @@ pipeline {
   
   parameters {
     choice (name: 'VERSION' , choices :['1','2','3'], description: 'Checking the parameters)
+            }
   
   stages{
     
