@@ -2,6 +2,9 @@ pipeline {
   
   agent any
   
+  parameters {
+    choice (name: 'VERSION' , choices :['1','2','3'], description: 'Checking the parameters)
+  
   stages{
     
     stage("Build") {
@@ -19,16 +22,12 @@ pipeline {
     stage("Test") {
       steps{
         echo 'Testing process...Test2'
-        echo env.BRANCH_NAME
+        echo "deploying version : ${params.VERSION} "
       }
     }
     
     stage("Deploy") {
-      when {
-        expression{
-          env.BRANCH_NAME =='main'
-        }
-      }
+
       steps{
         echo 'Deploying process...Test2'
       }
